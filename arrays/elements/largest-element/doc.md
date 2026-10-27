@@ -140,6 +140,18 @@
 
 
 
+<!-- Automated Testing: -->
+
+Both implementations include predefined test cases.
+
+<!-- Python -->
+    cd python
+    python -m unittest -v test_solution.py
+
+<!-- Java -->
+    cd java
+    javac Solution.java TestSolution.java
+    java TestSolution
 
 <!-- Brute-force time	O(n\log n) -->
 <!-- Optimal time	O(n) -->
