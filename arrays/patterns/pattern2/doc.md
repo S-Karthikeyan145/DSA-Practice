@@ -36,13 +36,12 @@
   We use two loops to generate this pattern.
 
   1. Outer loop:
-     Controls the number of rows.
+    Controls the number of rows.
 
   2. Inner loop:
-     Controls the number of stars printed in each row.
+    Controls the number of stars printed in each row.
 
   The important observation is:
-
       The number of stars in each row is equal to the current row number.
 
   <!-- Algorithm: -->
@@ -50,31 +49,22 @@
   Step 1: Start the outer loop
 
       Run the outer loop from 1 to n.
-
       for row in range(1, n + 1):
-
       This means the loop executes n times.
 
   Step 2: Run the inner loop
 
       For every row, print stars equal to the current row number.
-
       for column in range(1, row + 1):
-
       Notice that we use row instead of n.
-
       Why?
-
       Because the number of stars must increase with every new row.
 
   Step 3: Print the stars
 
       Print "*" without moving to the next line.
-
       print("*", end="")
-
       After the inner loop finishes, move to the next line.
-
       print()
 
   <!-- Python — Solution: -->
@@ -86,17 +76,14 @@
                       print("*", end="")
                   print()
 
-
   <!-- Java — Solution: -->
 
       class Solution {
           public void pattern2(int n) {
               for (int row = 1; row <= n; row++) {
-
                   for (int column = 1; column <= row; column++) {
                       System.out.print("*");
                   }
-
                   System.out.println();
               }
           }
@@ -111,49 +98,37 @@
   Iteration 1:
 
       row = 1
-
       Inner loop:
           column = 1
-
       Print:
           *
-
       Move to the next line.
 
   Iteration 2:
 
       row = 2
-
       Inner loop:
           column = 1, 2
-
       Print:
           **
-
       Move to the next line.
 
   Iteration 3:
 
       row = 3
-
       Inner loop:
           column = 1, 2, 3
-
       Print:
           ***
-
       Move to the next line.
 
   Iteration 4:
 
       row = 4
-
       Inner loop:
           column = 1, 2, 3, 4
-
       Print:
           ****
-
       Move to the next line.
 
 
@@ -164,8 +139,8 @@
       Outer loop (row)    Inner loop (column)    Stars printed
            1                    1                     1
            2                   1, 2                   2
-           3                 1, 2, 3                 3
-           4                1, 2, 3, 4               4
+           3                 1, 2, 3                  3
+           4                1, 2, 3, 4                4
 
 
   <!-- Final output: -->
@@ -206,26 +181,6 @@
   Therefore, the pattern contains 15 stars.
 
 
-  <!-- Complexity Analysis: -->
-
-      Outer loop executes n times.
-
-      Inner loop executes:
-          1 + 2 + 3 + ... + n times.
-
-      Total iterations:
-
-          n * (n + 1) / 2
-
-      Time Complexity:
-          O(n²)
-
-      Auxiliary Space:
-          O(1)
-
-      Output Space:
-          O(n²)
-
 
   <!-- Automated Testing: -->
 
@@ -233,12 +188,10 @@
 
   <!-- Python -->
 
-      cd python
       python -m unittest -v test_solution.py
 
   <!-- Java -->
 
-      cd java
       javac -d . Solution.java TestSolution.java
       java -cp . TestSolution
 
@@ -270,27 +223,24 @@
       *****
 
 
-  <!-- Complexity Summary: -->
-
+<!-- Complexity Summary: -->
       Time Complexity       O(n²)
       Auxiliary Space       O(1)
       Output Space          O(n²)
 
 
-  <!-- Key Learning: -->
-
-  Pattern 1:
+<!-- Key Learning: -->
+  <!-- Pattern 1: -->
       Every row contains n stars.
 
       Inner loop:
           column <= n
 
-  Pattern 2:
+  <!-- Pattern 2: -->
       Every row contains stars equal to its row number.
 
       Inner loop:
           column <= row
 
   The key difference is that Pattern 1 uses a fixed inner-loop limit, whereas Pattern 2 uses the current row number.
-
   This is the foundation for understanding more advanced nested-loop patterns.
